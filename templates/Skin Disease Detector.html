@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skin Disease Detector</title>
+  <link href="./Skin Disease Detector_files/css2" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #4b6cb7;
+      background: linear-gradient(to right, #4b6cb7, #182848);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #3552a1, #121c3a);
+    }
+
+    .result {
+      margin-top: 25px;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    .result h2 {
+      font-size: 1.5rem;
+      color: #444;
+    }
+
+    .result p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .image-preview {
+      margin-top: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .image-preview img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Skin Disease Detection</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required="">
+      <br><br>
+      <button type="submit">Upload &amp; Predict</button>
+    </form>
+
+    
+    <div class="result">
+      <h2>Predicted Disease</h2>
+      <p>Actinic keratosis</p>
+    </div>
+
+    <div class="image-preview">
+      <img src="./Skin Disease Detector_files/ISIC_0024468.jpg" alt="Uploaded Image">
+    </div>
+    
+  </div>
+
+</body></html>
